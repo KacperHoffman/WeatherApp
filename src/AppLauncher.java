@@ -7,7 +7,7 @@ public class AppLauncher {
             public void run() {
                 new WeatherAppGUI().setVisible(true);
 
-                //System.out.println(WeatherApp.getWeatherData("New York"));
+
             }
         });
     }
