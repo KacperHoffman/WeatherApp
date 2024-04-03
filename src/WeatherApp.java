@@ -28,8 +28,6 @@ public class WeatherApp {
                 "&longitude=" + longitude +
                 "&hourly=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m";
 
-        System.out.println(urlString);
-
         try{
 
             HttpURLConnection connection = fetchApiResponse(urlString);
@@ -39,7 +37,6 @@ public class WeatherApp {
                 return null;
             }
 
-            System.out.println(connection.getResponseCode());
 
             StringBuilder resultJson = new StringBuilder();
             Scanner scanner = new Scanner(connection.getInputStream());
@@ -54,8 +51,6 @@ public class WeatherApp {
 
             connection.disconnect();
 
-            System.out.println(resultJson);
-
             JSONParser parser = new JSONParser();
             JSONObject resultJsonObject = (JSONObject) parser.parse(String.valueOf(resultJson));
 
@@ -63,8 +58,6 @@ public class WeatherApp {
 
             JSONArray time = (JSONArray) hourly.get("time");
             int index = findIndexOfCurrentTime(time);
-
-            System.out.println("Index " + index);
 
             // temperatura
             JSONArray temperatureData = (JSONArray) hourly.get("temperature_2m");
