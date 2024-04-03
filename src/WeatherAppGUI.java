@@ -121,10 +121,10 @@ public class WeatherAppGUI extends JFrame {
                 weatherConditionLabel.setText(weatherCondition);
 
                 long humidity = (long) weatherData.get("humidity");
-                humidityLabel.setText("<html><b>Humidity</b>" + humidity + "%</html>");
+                humidityLabel.setText("<html><b>Humidity</b><br>" + humidity + "%</html>");
 
                 double windspeed = (double) weatherData.get("windspeed");
-                windspeedLabel.setText("<html><b>Windspeed</b>" + windspeed +  " km/h</html>");
+                windspeedLabel.setText("<html><b>Windspeed</b><br>" + windspeed +  " km/h </html>");
 
 
             }
